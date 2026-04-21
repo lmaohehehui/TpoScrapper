@@ -1,0 +1,123 @@
+:root {
+  --primary: #6366f1;
+  --secondary: #4f46e5;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --bg-dark: #0f172a;
+  --text-main: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  width: 320px;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+h1 { font-size: 1.4rem; font-weight: 600; }
+h1 span { color: var(--primary); }
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.indicator.idle { background: #64748b; }
+.indicator.checking { background: var(--primary); animation: pulse 1.5s infinite; }
+.indicator.found { background: var(--success); box-shadow: 0 0 15px var(--success); }
+.indicator.none { background: var(--warning); }
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.card {
+  padding: 15px;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.input-group { margin-bottom: 10px; }
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0,0,0,0.2);
+  color: white;
+  font-size: 0.9rem;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.secondary-btn {
+  background: white;
+  color: var(--bg-dark);
+  margin-top: 10px;
+}
+
+button:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+#statusMsg {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #94a3b8;
+}
+
+.list-container {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.company-item {
+  padding: 8px;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 0.8rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 10px;
+}

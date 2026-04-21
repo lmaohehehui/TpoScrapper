@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TPO Alerter</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>TPO <span>Alerter</span></h1>
+      <div id="statusIndicator" class="indicator checking"></div>
+    </header>
+
+    <main>
+      <div class="auth-section card glass">
+        <div class="input-group">
+          <input type="text" id="username" placeholder="Username">
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password">
+        </div>
+        <button id="saveBtn" class="primary-btn">Update Credentials</button>
+      </div>
+
+      <div class="action-section">
+        <button id="checkBtn" class="secondary-btn">Check for Companies</button>
+      </div>
+
+      <div id="resultArea" class="card glass">
+        <p id="statusMsg">Ready to scan</p>
+        <div id="companyList" class="list-container"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Batch 2027 Monitor</p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
